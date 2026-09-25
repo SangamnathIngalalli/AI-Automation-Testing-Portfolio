@@ -26,10 +26,11 @@ The projects are designed around **real-world AI testing challenges**, moving fr
 
 ## 📋 Projects
 
-| #  | Project                      | Description                                                     | Status      | Links                                                                         |
-| -- | ---------------------------- | --------------------------------------------------------------- | ----------- | ----------------------------------------------------------------------------- |
-| 01 | **LLM Testing Fundamentals** | Foundational functional testing of an LLM-powered application   | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/llm-testing-fundamentals) |
-| 02 | **DeepEval LLM Evaluation**  | Automated semantic evaluation using DeepEval and LLM-as-a-Judge | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/deepeval-llm-evaluation)  |
+| # | Project | Description | Status | Links |
+|---|---|---|---|---|
+| 01 | **LLM Testing Fundamentals** | Foundational functional testing of an LLM-powered application | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/llm-testing-fundamentals) |
+| 02 | **DeepEval LLM Evaluation** | Automated semantic evaluation using DeepEval and LLM-as-a-Judge | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/deepeval-llm-evaluation) |
+| 03 | **Golden Dataset for AI Testing** | Versioned Golden Dataset with synthetic test generation, validation, pytest, and DeepEval | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/golden-dataset-ai-testing) |
 
 ---
 
@@ -51,16 +52,16 @@ The project explores how traditional software testing concepts can be adapted fo
 
 The test suite contains **20 tests across 8 categories**:
 
-| Category             | Purpose                                         |
-| -------------------- | ----------------------------------------------- |
-| ✅ Happy Path         | Validate expected user interactions             |
-| ❌ Negative Inputs    | Validate invalid or unexpected inputs           |
-| 🈳 Empty Input       | Test blank and missing input                    |
-| 📏 Long Input        | Validate behavior with large prompts            |
-| 🔍 Edge Cases        | Test unusual boundary conditions                |
-| 🌐 Out-of-Domain     | Validate unsupported questions                  |
+| Category | Purpose |
+|---|---|
+| ✅ Happy Path | Validate expected user interactions |
+| ❌ Negative Inputs | Validate invalid or unexpected inputs |
+| 🈳 Empty Input | Test blank and missing input |
+| 📏 Long Input | Validate behavior with large prompts |
+| 🔍 Edge Cases | Test unusual boundary conditions |
+| 🌐 Out-of-Domain | Validate unsupported questions |
 | 🔄 Prompt Variations | Test different ways of asking the same question |
-| ⚠️ Error Handling    | Validate application behavior during failures   |
+| ⚠️ Error Handling | Validate application behavior during failures |
 
 ### 🏗️ Testing Approach
 
@@ -129,23 +130,23 @@ Instead of checking only whether the application executes successfully, this pro
 
 The project contains **25 evaluation test cases** across multiple categories:
 
-| Category      | Test Cases |
-| ------------- | ---------: |
-| Happy Path    |         15 |
-| Negative      |          3 |
-| Out-of-Domain |          2 |
-| Safety        |          2 |
-| Ambiguous     |          2 |
-| **Total**     |     **25** |
+| Category | Test Cases |
+|---|---:|
+| Happy Path | 15 |
+| Negative | 3 |
+| Out-of-Domain | 2 |
+| Safety | 2 |
+| Ambiguous | 2 |
+| **Total** | **25** |
 
 ### 📊 Evaluation Metrics
 
-| Metric                  | Purpose                                                     |
-| ----------------------- | ----------------------------------------------------------- |
-| **Answer Relevancy**    | Measures whether the response addresses the user's question |
-| **GEval Correctness**   | Evaluates correctness of the generated answer               |
-| **GEval Safety**        | Evaluates whether the response meets safety expectations    |
-| **GEval Out-of-Domain** | Evaluates handling of unsupported questions                 |
+| Metric | Purpose |
+|---|---|
+| **Answer Relevancy** | Measures whether the response addresses the user's question |
+| **GEval Correctness** | Evaluates correctness of the generated answer |
+| **GEval Safety** | Evaluates whether the response meets safety expectations |
+| **GEval Out-of-Domain** | Evaluates handling of unsupported questions |
 
 ### 🧠 LLM-as-a-Judge
 
@@ -168,28 +169,6 @@ Evaluation Score
 ```
 
 The evaluator uses an LLM to assess the quality of another LLM's response against defined evaluation criteria.
-
-### 🏗️ Project Structure
-
-```text
-deepeval-llm-evaluation/
-│
-├── app/
-│   ├── claude_client.py
-│   └── deepeval_config.py
-│
-├── tests/
-│   ├── test_deepeval_smoke.py
-│   └── test_deepeval_llm.py
-│
-├── test_data/
-│   ├── deepeval_llm_cases.json
-│   └── failures.md
-│
-├── reports/
-│
-└── .env
-```
 
 ### 🛠️ Technology Stack
 
@@ -230,57 +209,202 @@ This project demonstrates how **semantic evaluation** can complement traditional
 
 ---
 
-# 🔗 How the Projects Connect
+# 🏆 Project 03 — Golden Dataset for AI Testing
 
-The two projects demonstrate two complementary layers of AI testing:
+**Status:** ✅ Completed
+
+### 🔗 Repository
+
+[**View Golden Dataset for AI Testing →**](https://github.com/SangamnathIngalalli/golden-dataset-ai-testing)
+
+### 📌 Overview
+
+Project 03 builds a **production-style Golden Dataset** for an e-commerce customer support AI.
+
+The project focuses on creating a reusable, schema-validated, versioned evaluation dataset that can be used for AI regression testing and LLM evaluation.
+
+### 📊 Dataset Coverage
+
+The current implementation contains **50 Golden test cases**:
+
+| Source | Category | Cases |
+|---|---|---:|
+| Human-authored | Happy Path | 20 |
+| Synthetic | Happy Path | 10 |
+| Synthetic | Negative | 5 |
+| Synthetic | Edge | 5 |
+| Synthetic | Ambiguous | 5 |
+| Synthetic | Out-of-Domain | 5 |
+| **Total** | | **50** |
+
+The current dataset covers **5 of the planned 10 test categories**. The project structure supports further expansion into positive, boundary, no-answer, adversarial, and safety categories.
+
+### 🧪 Golden Dataset Capabilities
+
+* Golden test case design
+* Human-authored test cases
+* Synthetic test generation using Claude
+* Positive and negative testing
+* Edge-case testing
+* Ambiguous input testing
+* Out-of-domain testing
+* JSON Schema validation
+* Pydantic data validation
+* Dataset versioning
+* DeepEval evaluation
+* LLM-as-a-Judge
+* Failure analysis
+* HTML test reporting
+
+### 🏗️ Dataset Workflow
 
 ```text
-┌──────────────────────────────────────┐
-│       AI / LLM Application           │
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│  Project 01                          │
-│  LLM Testing Fundamentals            │
-│                                      │
-│  "Does the application behave        │
-│   correctly?"                        │
-└──────────────────┬───────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────┐
-│  Project 02                          │
-│  DeepEval LLM Evaluation             │
-│                                      │
-│  "How good is the AI response?"      │
-└──────────────────────────────────────┘
+Human-authored Cases
+        │
+        ▼
+Golden Dataset v1
+        │
+        ├── Schema Validation
+        │
+        ├── Synthetic Data Generation
+        │
+        ▼
+Combined Golden Dataset
+        │
+        ▼
+Pytest + DeepEval
+        │
+        ▼
+Claude LLM Judge
+        │
+        ▼
+Evaluation Report
+```
+
+### 🛠️ Technology Stack
+
+```text
+Python 3.11+
+│
+├── Pytest
+├── DeepEval
+├── Anthropic Claude API
+├── Pydantic 2
+├── JSON Schema
+├── python-dotenv
+└── pytest-html
+```
+
+### 📈 Current Results
+
+| Area | Result |
+|---|---|
+| Dataset size | **50 cases** |
+| Human-authored | **20 cases** |
+| Synthetic | **30 cases** |
+| Current category coverage | **5 / 10 categories** |
+| Dataset validation | ✅ |
+| Pytest validation | **5 / 5 passed** |
+| DeepEval relevance tests | **20 / 20 passed** |
+| LLM Judge | **Claude / Anthropic** |
+| HTML reporting | ✅ |
+
+> LLM-based evaluation is non-deterministic, so individual evaluation results can vary between runs.
+
+### 🔐 Quality & Security
+
+The project includes:
+
+* Dataset validation before evaluation
+* Versioned Golden datasets
+* Failure analysis
+* Threshold-based evaluation
+* Synthetic-data validation
+* Environment-based API key configuration
+* Protection against committing secrets
+
+API keys are kept outside the repository in `.env` and should never be committed to Git.
+
+### 🎯 Skills Demonstrated
+
+* Golden Dataset Design
+* AI Test Data Engineering
+* Synthetic Test Data Generation
+* DeepEval
+* LLM-as-a-Judge
+* Dataset Validation
+* JSON Schema
+* Pydantic
+* Dataset Versioning
+* Failure Analysis
+* Pytest Automation
+* AI Quality Engineering
+
+---
+
+# 🔗 How the Projects Connect
+
+These projects demonstrate a progression from functional LLM testing to structured AI evaluation and reusable Golden test data:
+
+```text
+┌─────────────────────────────────────────┐
+│           AI / LLM Application          │
+└────────────────────┬────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────┐
+│ Project 01                              │
+│ LLM Testing Fundamentals                │
+│                                         │
+│ "Does the application behave correctly?"│
+└────────────────────┬────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────┐
+│ Project 02                              │
+│ DeepEval LLM Evaluation                 │
+│                                         │
+│ "How good is the AI response?"          │
+└────────────────────┬────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────┐
+│ Project 03                              │
+│ Golden Dataset for AI Testing           │
+│                                         │
+│ "How do we build reusable evaluation   │
+│  data for AI quality and regression?"   │
+└─────────────────────────────────────────┘
 ```
 
 ### Testing Progression
 
-**Functional Testing → Semantic Evaluation**
+**Functional Testing → Semantic Evaluation → Golden Dataset Engineering**
 
 Project 01 establishes the foundation for testing an LLM application.
 
-Project 02 builds on that foundation by introducing automated evaluation of **response quality and semantic behavior**.
+Project 02 introduces automated semantic evaluation and LLM-as-a-Judge.
+
+Project 03 introduces **structured Golden test data, synthetic generation, validation, versioning, and reusable evaluation workflows**.
 
 ---
 
 # 🧰 Skills Demonstrated
 
-| Area                    | Skills                          |
-| ----------------------- | ------------------------------- |
-| **Programming**         | Python                          |
-| **Test Automation**     | Pytest                          |
-| **LLM Testing**         | Functional & Behavioral Testing |
-| **LLM Evaluation**      | DeepEval                        |
-| **AI Evaluation**       | LLM-as-a-Judge                  |
-| **API Testing**         | Claude API                      |
-| **Test Design**         | Positive, Negative & Edge Cases |
-| **Quality Engineering** | Failure Analysis & Validation   |
-| **Reporting**           | HTML Test Reports               |
-| **AI Quality**          | Relevancy, Correctness & Safety |
+| Area | Skills |
+|---|---|
+| **Programming** | Python |
+| **Test Automation** | Pytest |
+| **LLM Testing** | Functional & Behavioral Testing |
+| **LLM Evaluation** | DeepEval |
+| **AI Evaluation** | LLM-as-a-Judge |
+| **API Testing** | Claude API |
+| **Test Data Engineering** | Golden Datasets & Synthetic Data |
+| **Data Validation** | Pydantic & JSON Schema |
+| **Test Design** | Positive, Negative, Edge & Ambiguous Cases |
+| **Quality Engineering** | Failure Analysis & Validation |
+| **Reporting** | HTML Test Reports |
+| **AI Quality** | Relevancy, Correctness & Safety |
 
 ---
 
@@ -296,6 +420,8 @@ Project 02 builds on that foundation by introducing automated evaluation of **re
         ┌─────┴─────┐             ┌─────┴─────┐
         │           │             │           │
       Pytest     Mocking       Claude      DeepEval
+        │                         │           │
+        │                    Golden Dataset   │
         │                         │           │
         └─────────────┬───────────┴───────────┘
                       │
