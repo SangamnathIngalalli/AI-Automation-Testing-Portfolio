@@ -31,6 +31,7 @@ The projects are designed around **real-world AI testing challenges**, moving fr
 | 01 | **LLM Testing Fundamentals** | Foundational functional testing of an LLM-powered application | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/llm-testing-fundamentals) |
 | 02 | **DeepEval LLM Evaluation** | Automated semantic evaluation using DeepEval and LLM-as-a-Judge | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/deepeval-llm-evaluation) |
 | 03 | **Golden Dataset for AI Testing** | Versioned Golden Dataset with synthetic test generation, validation, pytest, and DeepEval | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/golden-dataset-ai-testing) |
+| 04 | **AI Chatbot Testing & Regression Framework** | Multi-turn conversational testing with context, hallucination, safety, bias, regression, DeepEval, and HTML reporting | ✅ Completed | [Repository](https://github.com/SangamnathIngalalli/ai-chatbot-testing-framework) |
 
 ---
 
@@ -342,6 +343,201 @@ API keys are kept outside the repository in `.env` and should never be committed
 
 ---
 
+# 🧪 Project 04 — AI Chatbot Testing & Regression Framework
+
+**Status:** ✅ Completed
+
+### 🔗 Repository
+
+[**View AI Chatbot Testing & Regression Framework →**](https://github.com/SangamnathIngalalli/ai-chatbot-testing-framework)
+
+### 📌 Overview
+
+A practical automated testing framework for validating **multi-turn conversational LLM applications** using Pytest, DeepEval, and Anthropic Claude.
+
+The framework evaluates conversational AI beyond simple functional checks by testing **context retention, knowledge retention, role adherence, conversation completeness, hallucination, safety, bias, regression behavior, and failure analysis**.
+
+### 🧪 Testing Coverage
+
+| Test Area | Purpose |
+|---|---|
+| Multi-Turn Testing | Validate behavior across multiple conversation turns |
+| Context Retention | Verify that previous information is remembered |
+| Knowledge Retention | Check whether relevant information is preserved |
+| Role Adherence | Verify that the model follows its assigned role |
+| Conversation Completeness | Check whether important user requirements are addressed |
+| Hallucination Testing | Identify unsupported or fabricated information |
+| Safety Testing | Evaluate responses to potentially unsafe requests |
+| Bias Testing | Check for inconsistent or problematic treatment |
+| Regression Testing | Detect unexpected behavior changes |
+| Failure Analysis | Investigate failed AI evaluations |
+| HTML Reporting | Generate readable automated test reports |
+
+### 💬 Multi-Turn Testing
+
+The framework evaluates conversations as a sequence of interactions rather than treating every prompt independently.
+
+This allows tests to verify whether the model correctly uses information from earlier turns when generating later responses.
+
+### 🧠 Context & Knowledge Retention
+
+Tests verify that information introduced earlier in a conversation remains available and is correctly applied in later turns.
+
+The framework checks:
+
+* Previous user information
+* Conversation history
+* References to earlier statements
+* Correct use of previously provided information
+* Consistency across multiple turns
+
+### 🎭 Role Adherence
+
+The framework evaluates whether the model continues following its assigned role and instructions throughout a conversation.
+
+Checks include:
+
+* Following system instructions
+* Maintaining the assigned role
+* Staying within the requested scope
+* Avoiding unnecessary role changes
+* Maintaining consistent behavior
+
+### 📝 Conversation Completeness
+
+The framework checks whether the AI response addresses the important parts of the user's request rather than answering only one portion.
+
+Completeness evaluation considers:
+
+* Requested tasks
+* Important constraints
+* Required explanations
+* Relevant conversation context
+* Missing response components
+
+### 🤖 Hallucination Testing
+
+Hallucination tests identify responses containing unsupported, fabricated, or contextually incorrect information.
+
+The testing approach can identify:
+
+* Fabricated facts
+* Unsupported claims
+* Invented references
+* Incorrect contextual information
+* False confidence
+
+### 🛡️ Safety Testing
+
+Safety scenarios evaluate how the model responds to potentially harmful or inappropriate requests.
+
+The framework focuses on whether the response follows the expected safety behavior rather than relying only on exact keyword matching.
+
+### ⚖️ Bias Testing
+
+Bias testing evaluates whether the model behaves consistently when scenarios are changed in ways that should not materially affect the answer.
+
+This provides a structured way to investigate potentially inconsistent model behavior.
+
+### 🔄 Regression Testing
+
+LLM behavior can change when models, prompts, system instructions, application logic, dependencies, or evaluation thresholds change.
+
+The framework supports repeatable execution of the same test scenarios to identify unexpected behavioral changes.
+
+### 🔍 Failure Analysis
+
+Failed evaluations can be investigated using:
+
+1. Test input
+2. Conversation history
+3. Expected behavior
+4. Actual model response
+5. Evaluation metric
+6. Evaluation score
+7. Failure reason
+
+This makes the framework useful not only for detecting failures but also for understanding AI behavior.
+
+### 📊 Evaluation Strategy
+
+Because LLM responses can be expressed in multiple valid ways, the framework uses **DeepEval metrics and LLM-as-a-Judge evaluation** where appropriate.
+
+The evaluation flow is:
+
+```text
+Test Scenario
+      ↓
+Conversation Input
+      ↓
+LLM Response
+      ↓
+Evaluation Metric
+      ↓
+LLM-as-a-Judge
+      ↓
+Score + Reason
+      ↓
+Threshold Comparison
+      ↓
+PASS / FAIL
+```
+
+### 🧪 Test Execution
+
+The project uses Pytest for automated execution.
+
+Run the complete suite:
+
+```bash
+pytest
+```
+
+Run with verbose output:
+
+```bash
+pytest -v
+```
+
+Generate an HTML report:
+
+```bash
+pytest --html=reports/report.html --self-contained-html
+```
+
+### 🛠️ Technology Stack
+
+```text
+Python
+│
+├── Pytest
+├── DeepEval
+├── Anthropic Claude API
+├── LLM-as-a-Judge
+├── pytest-html
+└── python-dotenv
+```
+
+### 🎯 Skills Demonstrated
+
+* Multi-Turn LLM Testing
+* Conversational AI Testing
+* Context & Knowledge Retention
+* Semantic Evaluation
+* DeepEval
+* LLM-as-a-Judge
+* Hallucination Testing
+* Safety Testing
+* Bias Testing
+* Regression Testing
+* Failure Analysis
+* Pytest Automation
+* HTML Test Reporting
+* API Integration
+* AI Quality Engineering
+
+---
+
 # 🔗 How the Projects Connect
 
 These projects demonstrate a progression from functional LLM testing to structured AI evaluation and reusable Golden test data:
@@ -379,13 +575,11 @@ These projects demonstrate a progression from functional LLM testing to structur
 
 ### Testing Progression
 
-**Functional Testing → Semantic Evaluation → Golden Dataset Engineering**
+The portfolio currently covers:
 
-Project 01 establishes the foundation for testing an LLM application.
+**Functional Testing → Semantic Evaluation → Golden Dataset Engineering → Multi-Turn AI Testing & Regression**
 
-Project 02 introduces automated semantic evaluation and LLM-as-a-Judge.
-
-Project 03 introduces **structured Golden test data, synthetic generation, validation, versioning, and reusable evaluation workflows**.
+Project 04 adds automated conversational testing with context retention, hallucination, safety, bias, regression, and failure analysis.
 
 ---
 
