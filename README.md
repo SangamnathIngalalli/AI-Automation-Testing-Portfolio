@@ -27,6 +27,7 @@ This portfolio demonstrates practical experience in:
 | 02 | **DeepEval LLM Evaluation** | Semantic evaluation using DeepEval and LLM-as-a-Judge | ✅ Completed |
 | 03 | **Golden Dataset for AI Testing** | Reusable Golden Dataset engineering, synthetic test data, validation, and evaluation | ✅ Completed |
 | 04 | **AI Chatbot Testing & Regression Framework** | Multi-turn conversational testing, hallucination, safety, bias, and regression | ✅ Completed |
+| 05 | **RAG Document Question Answering** | Retrieval-Augmented Generation testing with document retrieval, answer validation, and DeepEval evaluation | ✅ Completed |
 
 ---
 
@@ -70,11 +71,21 @@ A multi-turn conversational AI testing framework that evaluates chatbot behavior
 
 ---
 
+## 📚 Project 05 — RAG Document Question Answering
+
+A Retrieval-Augmented Generation (RAG) project that tests document retrieval and grounded question answering over a controlled knowledge base.
+
+**Focus:** Document ingestion, chunking, SentenceTransformers embeddings, ChromaDB retrieval, Claude-based generation, out-of-domain refusal testing, DeepEval, answer relevancy, faithfulness, contextual relevancy, and LLM-as-a-Judge.
+
+🔗 [**View Project 05 Repository →**](https://github.com/SangamnathIngalalli/rag-document-qa)
+
+---
+
 ## 🔗 Testing Progression
 
 The projects build progressively from traditional test automation toward AI-specific quality engineering:
 
-**Functional Testing → Semantic Evaluation → Golden Dataset Engineering → Multi-Turn AI Testing & Regression**
+**Functional Testing → Semantic Evaluation → Golden Dataset Engineering → Multi-Turn AI Testing & Regression → RAG Evaluation**
 
 | Stage | Question |
 |---|---|
@@ -82,6 +93,7 @@ The projects build progressively from traditional test automation toward AI-spec
 | **Project 02** | How good is the generated AI response? |
 | **Project 03** | How can reusable evaluation data support AI quality and regression? |
 | **Project 04** | How does the AI behave across realistic multi-turn conversations? |
+| **Project 05** | Can the AI retrieve relevant documents and generate grounded answers from them? |
 
 ---
 
